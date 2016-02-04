@@ -12,11 +12,11 @@ GameObject:
   - 65: {fileID: 6582938}
   - 23: {fileID: 2331990}
   - 135: {fileID: 13587036}
-  - 114: {fileID: 11478894}
   - 195: {fileID: 19539428}
   - 54: {fileID: 5414184}
+  - 114: {fileID: 11430776}
   m_Layer: 0
-  m_Name: Ant
+  m_Name: WorkerAnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -86,7 +86,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 155532}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.01, y: 0.5, z: 0.26}
+  m_LocalPosition: {x: 9.36, y: 0.5, z: 5.26}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 428636}
@@ -103,7 +103,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: a2aee37d7838d5d4eb882c5ec402ec83, type: 2}
+  - {fileID: 2100000, guid: 2478f31a81d350742b8494961d1412b7, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -186,7 +186,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &11478894
+--- !u!114 &11430776
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -194,7 +194,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 155532}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f1a0a5ef5559d8449c9ea25c138a07f, type: 3}
+  m_Script: {fileID: 11500000, guid: 18415472f871d914fabe2de07af4fd5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sightRange: 10
@@ -202,11 +202,8 @@ MonoBehaviour:
   gatherRange: 3
   colonyRange: 2
   searchStopRange: 2
-  minXRange: -50
-  maxXRange: 50
-  minZRange: -75
-  maxZRange: 75
-  foodLife: 12
+  maxXRange: 10
+  maxZRange: 10
   meshRendererFlag: {fileID: 2373644}
   eyes: {fileID: 428636}
   home: {fileID: 464194, guid: 4120b7bf04231a74c8d3336a9477e714, type: 2}
@@ -237,7 +234,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 3
+  m_Radius: 5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!195 &19539428
 NavMeshAgent:
@@ -267,9 +264,25 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
+      propertyPath: colonyRange
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: home
       value: 
       objectReference: {fileID: 464194, guid: 4120b7bf04231a74c8d3336a9477e714, type: 2}
+    - target: {fileID: 0}
+      propertyPath: gatherTime
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: gatherRange
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: searchStopRange
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 155532}
