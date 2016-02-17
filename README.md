@@ -2,4 +2,7 @@
 
 First Prototype of AntSim
 
-Just need a place to store this so I can make changes as needed
+WebGL build can be found here: https://github.com/DanielWare/AntSimWebGL
+
+WebGL visualization can be found here: http://danielware.github.io/AntSimWebGL/
+
