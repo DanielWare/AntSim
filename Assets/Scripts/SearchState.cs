@@ -20,7 +20,6 @@ public class SearchState : IAntState {
     public void UpdateState()
     {
         Search();
-        //Look(); //not currently using eyes
         timer += Time.deltaTime;
         if(timer > debugTime)
         {
@@ -73,21 +72,12 @@ public class SearchState : IAntState {
             ant.navMeshAgent.ResetPath();
 			antDestination = new Vector3 (Random.Range(ant.minXRange, ant.maxXRange), 0, Random.Range(ant.minZRange, ant.maxZRange));
         }
-        
-    }
-
-    /*not currently used
-    private void Look() 
-    {
-        //to gather state if found
-        RaycastHit hit;
-        if (Physics.Raycast(ant.eyes.transform.position, ant.eyes.transform.forward, out hit, ant.sightRange) && hit.collider.CompareTag("Food"))
+        if (!ant.navMeshAgent.hasPath)
         {
-            ant.target = hit.transform;
-            ToGatherState();
+            Debug.Log("No Path");
         }
     }
-    */
+
     
     private void ReNav()
     {
